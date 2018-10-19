@@ -1,3 +1,3 @@
 
 print "......"
-print "AAAAAA"
+print "AAAAAA"тдлывал
