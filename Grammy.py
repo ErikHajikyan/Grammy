@@ -1,3 +1,17 @@
+from datetime import datetime
+
+class WinnerInfo:
+    def __init__(self, name, song, album, year):
+        self.name = name
+        self.song = song
+        self.album = album
+        self.year = year
+
+class Winner:
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
+
 # input all  the below code in the Grammy class( It's our linked list class)
 def appendAfter(self, previous_node, new_data):
     if previous_node is None:
