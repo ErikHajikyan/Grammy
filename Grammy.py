@@ -1,18 +1,18 @@
 from datetime import datetime
 
-class WinnerInfo:
+class winnerInfo:
     def __init__(self, name, song, album, year):
         self.name = name
         self.song = song
         self.album = album
         self.year = year
 
-class Winner:
+class winner:
     def __init__(self, data=None):
         self.data = data
         self.next = None
         
-def addnewwinner(my_grammy):
+def addNewWinner(my_grammy):
     x.lower() = raw_input("Do you want to add a new Winner ?")
     while True:
         if x == "yes":
