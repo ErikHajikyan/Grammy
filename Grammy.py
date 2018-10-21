@@ -29,7 +29,7 @@ def addNewWinner(my_grammy):
                         print "please enter a year from 1959 to ", yearnow
                 except (NameError, SyntaxError):
                     print "Invalid input, please enter integers"
-            newwinner = WinnerInfo(name, song, album, year)
+            newwinner = winnerInfo(name, song, album, year)
             my_grammy.sortedinsert(newwinner)
             x = raw_input("Do you want to add other Winner ?")
         elif x.lower() == "no":
