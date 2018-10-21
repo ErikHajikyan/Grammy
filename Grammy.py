@@ -15,6 +15,18 @@ class winner:
 class Grammy:
     def __init__(self):
             self.__head = None
+    def sethead(self, newdata):
+        self.__head = Winner(newdata)
+
+    def display(self):
+        if self.__head is not None:
+            temp = self.__head
+            print "Registered Grammy prize years are the following:"
+            while temp is not None:
+                print temp.data.year
+                temp = temp.next
+            print "----------"
+            #Meri ay aystex
         
 
     def appendAfter(self, previous_node, new_data):
