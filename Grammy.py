@@ -11,6 +11,32 @@ class Winner:
     def __init__(self, data=None):
         self.data = data
         self.next = None
+        
+def addnewwinner(my_grammy):
+    x = raw_input("Do you want to add a new Winner ?")
+    while True:
+        if x == "yes":
+            yearnow = datetime.now().year
+            name = raw_input("please enter the name of the Winner")
+            song = raw_input("please enter the winner song")
+            album = raw_input("please enter the album of the song")
+            while True:
+                try:
+                    year = input("please enter on which year " + name + " won the grammy prize")
+                    if (year > 1958) and (year <= yearnow):
+                        break
+                    else:
+                        print "please enter a year from 1959 to ", yearnow
+                except (NameError, SyntaxError):
+                    print "Invalid input, please enter integers"
+            newwinner = WinnerInfo(name, song, album, year)
+            my_grammy.sortedinsert(newwinner)
+            x = raw_input("Do you want to add other Winner ?")
+        elif x == "no":
+            return my_grammy
+        else:
+            x = raw_input("please enter yes or no")
+
 
 # input all  the below code in the Grammy class( It's our linked list class)
 def appendAfter(self, previous_node, new_data):
