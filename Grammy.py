@@ -140,5 +140,8 @@ def addNewWinner(my_grammy):
             x = raw_input("please enter yes or no")
 
 def main():
+    my_grammy = Grammy()
+    my_grammy = addNewWinner(my_grammy)
+    my_grammy.display()
 
 main()
