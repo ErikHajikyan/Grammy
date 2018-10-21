@@ -16,7 +16,7 @@ class Grammy:
     def __init__(self):
             self.__head = None
     def sethead(self, newdata):
-        self.__head = Winner(newdata)
+        self.__head = winner(newdata)
 
     def display(self):
         if self.__head is not None:
