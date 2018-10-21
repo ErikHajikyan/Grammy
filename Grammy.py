@@ -1,13 +1,13 @@
 from datetime import datetime
 
-class WinnerInfo:
+class winnerInfo:
     def __init__(self, name, song, album, year):
         self.name = name
         self.song = song
         self.album = album
         self.year = year
 
-class Winner:
+class winner:
     def __init__(self, data=None):
         self.data = data
         self.next = None
@@ -55,10 +55,10 @@ class Grammy:
             print "There are no records"
 
         
-def addnewwinner(my_grammy):
+def addNewWinner(my_grammy):
     x = raw_input("Do you want to add a new Winner ?")
     while True:
-        if x == "yes":
+        if x.lower() == "yes":
             yearnow = datetime.now().year
             name = raw_input("please enter the name of the Winner")
             song = raw_input("please enter the winner song")
@@ -72,10 +72,10 @@ def addnewwinner(my_grammy):
                         print "please enter a year from 1959 to ", yearnow
                 except (NameError, SyntaxError):
                     print "Invalid input, please enter integers"
-            newwinner = WinnerInfo(name, song, album, year)
+            newwinner = winnerInfo(name, song, album, year)
             my_grammy.sortedinsert(newwinner)
             x = raw_input("Do you want to add other Winner ?")
-        elif x == "no":
+        elif x.lower() == "no":
             return my_grammy
         else:
             x = raw_input("please enter yes or no")
@@ -87,7 +87,7 @@ def appendAfter(self, previous_node, new_data):
         print "The given previousious node must in LinkedList."
         return
 
-    new_node = Winner(new_data)
+    new_node = winner(new_data)
 
     new_node.next = previous_node.next
 
