@@ -44,7 +44,7 @@ def appendAfter(self, previous_node, new_data):
         print "The given previousious node must in LinkedList."
         return
 
-    new_node = Winner(new_data)
+    new_node = winner(new_data)
 
     new_node.next = previous_node.next
 
