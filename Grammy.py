@@ -13,9 +13,9 @@ class winner:
         self.next = None
         
 def addNewWinner(my_grammy):
-    x.lower() = raw_input("Do you want to add a new Winner ?")
+    x = raw_input("Do you want to add a new Winner ?")
     while True:
-        if x == "yes":
+        if x.lower() == "yes":
             yearnow = datetime.now().year
             name = raw_input("please enter the name of the Winner")
             song = raw_input("please enter the winner song")
