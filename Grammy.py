@@ -26,7 +26,7 @@ class Grammy:
                 print temp.data.year
                 temp = temp.next
             print "----------"
-            #Meri ay aystex
+            #Meri
         
 
     def appendAfter(self, previous_node, new_data):
