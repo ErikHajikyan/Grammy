@@ -11,6 +11,49 @@ class Winner:
     def __init__(self, data=None):
         self.data = data
         self.next = None
+
+class Grammy:
+    def __init__(self):
+        self.__head = None
+
+    def sethead(self, newdata):
+        self.__head = Winner(newdata)
+
+    def display(self):
+        if self.__head is not None:
+            temp = self.__head
+            print "Registered Grammy prize years are the following:"
+            while temp is not None:
+                print temp.data.year
+                temp = temp.next
+            print "----------"
+            z = 1
+            print ("please select one of the years to print the winner's info")
+            while z == 1:
+                try:
+                    x = input()
+                    temp = self.__head
+                    while temp is not None and temp.data.year != x:
+                        temp = temp.next
+                    print "Winner's name:", temp.data.name, "  Song:", temp.data.song, "  album:", temp.data.album, \
+                        "  Year:", temp.data.year
+                    y = raw_input("Do you want to see other winner's info ?")
+                    while True:
+                        if y == "yes":
+                            print "please enter the year"
+                            break
+                        elif y == "no":
+                            z = 0
+                            break
+                        else:
+                            y = raw_input("please enter yes or no")
+                except(NameError, SyntaxError):
+                    print "Invalid input please enter integers only"
+                except AttributeError:
+                    print "please select one of the years above"
+        else:
+            print "There are no records"
+
         
 def addnewwinner(my_grammy):
     x = raw_input("Do you want to add a new Winner ?")
