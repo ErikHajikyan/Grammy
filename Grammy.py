@@ -13,7 +13,7 @@ class Winner:
         self.next = None
         
 def addnewwinner(my_grammy):
-    x = raw_input("Do you want to add a new Winner ?")
+    x.lower() = raw_input("Do you want to add a new Winner ?")
     while True:
         if x == "yes":
             yearnow = datetime.now().year
@@ -32,7 +32,7 @@ def addnewwinner(my_grammy):
             newwinner = WinnerInfo(name, song, album, year)
             my_grammy.sortedinsert(newwinner)
             x = raw_input("Do you want to add other Winner ?")
-        elif x == "no":
+        elif x.lower() == "no":
             return my_grammy
         else:
             x = raw_input("please enter yes or no")
