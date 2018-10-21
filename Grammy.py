@@ -65,8 +65,8 @@ class winner:
             temp = temp.next
 
 
-    def sortedinsert(self, newdata):
-        newwinner = Winner(newdata)
+    def sortedInsert(self, newdata):
+        newwinner = winner(newdata)
         if self.__head is None:
             self.__head = newwinner
 
@@ -96,7 +96,7 @@ def addNewWinner(my_grammy):
                 except (NameError, SyntaxError):
                     print "Invalid input, please enter integers"
             newwinner = winnerInfo(name, song, album, year)
-            my_grammy.sortedinsert(newwinner)
+            my_grammy.sortedInsert(newwinner)
             x = raw_input("Do you want to add other Winner ?")
         elif x.lower() == "no":
             return my_grammy
