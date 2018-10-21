@@ -12,8 +12,8 @@ class winner:
         self.data = data
         self.next = None
 
-    class Grammy:
-        def __init__(self):
+class Grammy:
+    def __init__(self):
             self.__head = None
         
 
@@ -76,7 +76,6 @@ class winner:
                 temp = temp.next
                 newwinner.next = temp.next
             temp.next = newwinner
-
 
 def addNewWinner(my_grammy):
     x = raw_input("Do you want to add a new Winner ?")
