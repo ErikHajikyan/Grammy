@@ -26,8 +26,33 @@ class Grammy:
                 print temp.data.year
                 temp = temp.next
             print "----------"
-            #Meri
-        
+            z = 1
+            print ("please select one of the years to print the winner's info")
+            while z == 1:
+                try:
+                    x = input()
+                    temp = self.__head
+                    while temp is not None and temp.data.year != x:
+                        temp = temp.next
+                    print "Winner's name:", temp.data.name, "  Song:", temp.data.song, "  album:", temp.data.album, \
+                        "  Year:", temp.data.year
+                    y = raw_input("Do you want to see other winner's info ?")
+                    while True:
+                        if y == "yes":
+                            print "please enter the year"
+                            break
+                        elif y == "no":
+                            z = 0
+                            break
+                        else:
+                            y = raw_input("please enter yes or no")
+                except(NameError, SyntaxError):
+                    print "Invalid input please enter integers only"
+                except AttributeError:
+                    print "please select one of the years above"
+        else:
+            print "There are no records"
+
 
     def appendAfter(self, previous_node, new_data):
         if previous_node is None:
