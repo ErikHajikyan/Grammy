@@ -57,12 +57,10 @@ class Grammy:
         else:
             print "There are no records"
 
-
-    def sortedInsert(self, newdata):
+    def sortedinsert(self, newdata):
         newwinner = Winner(newdata)
         if self.__head is None:
             self.__head = newwinner
-
         else:
             temp = self.__head
             while temp.next is not None and temp.next.data.year < newwinner.data.year:
@@ -70,25 +68,29 @@ class Grammy:
                 newwinner.next = temp.next
             temp.next = newwinner
 
-    def addNewWinner(self):
+    def askyear(self, name):
+        yearnow = datetime.now().year
+        while True:
+            try:
+                year = input("please enter on which year " + name + " won the grammy prize")
+                if (year > 1958) and (year <= yearnow):
+                    break
+                else:
+                    print "please enter a year from 1959 to ", yearnow
+            except (NameError, SyntaxError):
+                print "Invalid input, please enter integers"
+        return year
+
+    def addnewwinners(self):
         x = raw_input("Do you want to add a new Winner ?")
         while True:
             if x.lower() == "yes":
-                yearnow = datetime.now().year
                 name = raw_input("please enter the name of the Winner")
                 song = raw_input("please enter the winner song")
                 album = raw_input("please enter the album of the song")
-                while True:
-                    try:
-                        year = input("please enter on which year " + name + " won the grammy prize")
-                        if (year > 1958) and (year <= yearnow):
-                            break
-                        else:
-                            print "please enter a year from 1959 to ", yearnow
-                    except (NameError, SyntaxError):
-                        print "Invalid input, please enter integers"
+                year = self.askyear(name)
                 newwinner = WinnerInfo(name, song, album, year)
-                self.sortedInsert(newwinner)
+                self.sortedinsert(newwinner)
                 x = raw_input("Do you want to add other Winner ?")
             elif x.lower() == "no":
                 break
@@ -98,7 +100,7 @@ class Grammy:
 
 def main():
     my_grammy = Grammy()
-    my_grammy.addNewWinner()
+    my_grammy.addnewwinners()
     my_grammy.display()
 
 
